@@ -1,0 +1,6 @@
+*.json
+venv/*
+.vscode
+.idea
+config.yml
+test*

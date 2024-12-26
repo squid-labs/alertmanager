@@ -1,0 +1,35 @@
+discord:
+  bot_token: YOUR_DISCORD_TOKEN
+  environments:
+    prod:
+      warning:
+        channel_id: YOUR_DISCORD_CHANNEL_ID
+        author:
+          name: Alertmanager
+          icon_url: https://www.clipartmax.com/png/small/118-1186067_prometheus-software-logo-prometheus-monitoring.png
+      critical:
+         channel_id: YOUR_DISCORD_CHANNEL_ID
+         author:
+            name: Alertmanager
+            icon_url: https://www.clipartmax.com/png/small/118-1186067_prometheus-software-logo-prometheus-monitoring.png
+    test:
+       warning:
+          channel_id: YOUR_DISCORD_CHANNEL_ID
+          author:
+             name: Alertmanager
+             icon_url: https://www.clipartmax.com/png/small/118-1186067_prometheus-software-logo-prometheus-monitoring.png
+       critical:
+          channel_id: YOUR_DISCORD_CHANNEL_ID
+          author:
+             name: Alertmanager
+             icon_url: https://www.clipartmax.com/png/small/118-1186067_prometheus-software-logo-prometheus-monitoring.png
+
+valid_environments:
+   - test
+   - prod
+
+default_environment: prod
+
+environment_mapping:
+  us-east-1: prod
+  us-east-2: test

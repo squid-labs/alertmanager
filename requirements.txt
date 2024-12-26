@@ -1,0 +1,8 @@
+flask
+boto3
+zappa
+awsudo
+awscli
+setuptools
+requests
+slack_sdk
