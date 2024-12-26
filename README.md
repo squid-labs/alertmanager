@@ -9,7 +9,7 @@ https://img.shields.io/badge/Python%20application-v3.12-blue
 
 1. Install [ngrok](https://ngrok.com/).
 ```bash
-brew install ngrok
+choco install ngrok
 ```
 2. Ensure your System Python3 version is 3.12.
 ```bash
@@ -20,10 +20,15 @@ python3 -V
 choco install python@3.12
 choco link python@3.12
 ```
-4. [Create a new Discord App](https://discord.com/developers/applications).
-5. Create your Discord channel where you want to receive your
+4. [Create a new Slack App] https://api.slack.com/apps/, provide it with oAuth and also the chat:write permission. 
+   Create a channel. Configure the App to send notification to the channel
+
+5.[Create a new Discord App](https://discord.com/developers/applications).
+   Create your Discord channel where you want to receive your
    Alertmanager notifications.
+   
 6. Configure Alertmanager to send notifications to that channel.
+
 7. Create a configuration file called `config.yml` in the same directory
    as the webhook script that looks like this:
 ```yml
@@ -94,8 +99,8 @@ pagerduty:
    environments:
       - prod
    services:
-      default: f
-      website: a
+      default: f00df00df00df00df00df00df00df00d
+      website: d00fd00fd00fd00fd00fd00fd00fd00f
 
 valid_environments:
    - test
@@ -104,8 +109,8 @@ valid_environments:
 default_environment: prod
 
 environment_mapping:
-  us-east-1: prod
-  us-east-2: test
+  ap-southeast-3: prod
+  ap-southeast-3: test
 ```
 
 ## Alertmanager Configuration
@@ -126,11 +131,11 @@ alertmanager_route:
 alertmanager_receivers:
   - name: webhook-critical
     webhook_configs:
-      - url: "https:/3e602e00.execute-api.us-east-1.amazonaws.com/alertmanager/critical"
+      - url: "https://3e602e00.execute-api.ap-southeast-3.amazonaws.com/alertmanager/critical"
         send_resolved: true
   - name: webhook-warning
     webhook_configs:
-       - url: "https://3e602e00.execute-api.us-east-1.amazonaws.com/alertmanager/warning"
+       - url: "https://3e602e00.execute-api.ap-southeast-3.amazonaws.com/alertmanager/warning"
          send_resolved: true
 ```
 ### Prometheus Rules
@@ -170,7 +175,7 @@ while ngrok is running **(be sure to use the https one)**.
 6. Check your Discord and Telegram channels that you created for your Alertmanager
    notifications.
 
-## Deploy to AWS Lambda
+## Deployment to AWS Lambda
 
 1. Create a Python 3.12 Virtual Environment:
 ```bash
@@ -245,5 +250,3 @@ You should expect the following response:
 ```bash
 zappa tail
 ```
-
-
