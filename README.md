@@ -1,4 +1,4 @@
-# Alertmanager Webhook Receiver to send notifications to Discord, Telegram, and PagerDuty
+# Alertmanager Webhook Receiver to send notifications to Slack, Discord, Telegram, and PagerDuty
 
 [![Python Version: 3.12](
 https://img.shields.io/badge/Python%20application-v3.12-blue
@@ -250,3 +250,5 @@ You should expect the following response:
 ```bash
 zappa tail
 ```
+
+
